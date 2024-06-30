@@ -18,11 +18,14 @@ namespace HomeWork_OOP_1.Animals.MammalsGroup
 			Nationality = nationality;
 			Profession = profession;
 		}
-
-		public void DataHuman(Animal animal)
+		public override void Move()
 		{
-			animal.Print(Name);
-			Console.WriteLine($"NameType: {NameType}\nAge:{Age}\nNationality: {Nationality}\nProfession: {Profession}");
+			Console.WriteLine("----Man speaks-----");
+		}
+		public override void Print()
+		{
+			Console.WriteLine($"NameType: {NameType}\nName: {Name}\nAge:{Age}\nNationality: {Nationality}\nProfession: {Profession}");
+			Move();
 			Console.WriteLine();
 		}
 	}

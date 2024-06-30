@@ -19,11 +19,31 @@ namespace HomeWork_OOP_1.Animals.MammalsGroup
 			IsDomesticated = isDomesticated;
 		}
 
-		public void DataCat(Animal animal)
+		public override void Move() //абстрактный метод из Animal
 		{
-			animal.Print(Name);
-			Console.WriteLine($"Age:{Age}\nFurColor: {FurColor}\nIsDomesticated: {IsDomesticated}");
+			Console.WriteLine("----Сat meow-----");
+		}
+
+		public override void Print() // вирутальный метод из Animal
+		{		
+			Console.WriteLine($"NameType: {NameType}\nName: {Name}\nAge:{Age}\nFurColor: {FurColor}\nIsDomesticated: {IsDomesticated}");
+			Move();
+			
 			Console.WriteLine();
 		}
+
+		public new void Status()// скрытие
+		{
+			Console.WriteLine("Status");
+		}
+
+
+		public override string ToString()
+		{
+			return $"NameType: {NameType}\nName: {Name}\nAge:{Age}\nFurColor: {FurColor}\nIsDomesticated: {IsDomesticated}";
+		}
+
+
+		
 	}
 }

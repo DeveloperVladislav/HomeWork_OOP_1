@@ -18,11 +18,14 @@ namespace HomeWork_OOP_1.Animals.MammalsGroup
 			Breed = breed;
 			IsTrained = isTrained;
 		}
-
-		public void DataDog(Animal animal)
+		public override void Move()
 		{
-			animal.Print(Name);
-			Console.WriteLine($"Age:{Age}\nBreed: {Breed}\nIsTrained: {IsTrained}");
+			Console.WriteLine("----Dog bark-----");
+		}
+		public override void Print()
+		{
+			Console.WriteLine($"NameType: {NameType}\nName: {Name}\nAge:{Age}\nBreed: {Breed}\nIsTrained: {IsTrained}");
+			Move();
 			Console.WriteLine();
 		}
 	}
