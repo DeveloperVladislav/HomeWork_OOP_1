@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HomeWork_OOP_1.Animals.MammalsGroup
 {
-	public class Dog : Animal
+	public class Dog : Animal<int> //создание обычного необобщенного класса-наследника
 	{
 		private string Name { get; set; } = "Dog";
 		public string Breed { get; set; }        // Порода

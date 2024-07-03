@@ -17,17 +17,18 @@ namespace HomeWork_OOP_1
 		Insects = 5,     //насекомые
 		Fish = 6         //рыбы
 	}
-	public abstract class Animal//поставим sealed и всем наследникам хана...
+	public abstract class Animal<T> //поставим sealed и всем наследникам хана...
 	{
-		protected internal AnimalGroup NameType { get; set; } //доступ только внутри сборки и у его наследников в любой сборке
-		private protected int Age { get; set; } //Доступно внутри класса Animal и его наследникам в этой же сборке
+		/*public T Id { get; set; }*/
+		public AnimalGroup NameType { get; set; } //доступ только внутри сборки и у его наследников в любой сборке
+		public T Age { get; set; } //Доступно внутри класса Animal и его наследникам в этой же сборке
 
 		public bool StatusInRedBook { get; set; }  = true;
 
 		public Animal()
 		{
 		}
-		public Animal(AnimalGroup nameType,int age)
+		public Animal(AnimalGroup nameType,T age)
 		{
 			NameType = nameType;
 			Age = age;
@@ -45,6 +46,7 @@ namespace HomeWork_OOP_1
 			Console.WriteLine(StatusInRedBook);
 		}
 
+		
 
 	}
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace HomeWork_OOP_1.Animals.MammalsGroup
 {
-	public class Cat : Animal
+	public class Cat : Animal<int> //создание обычного необобщенного класса-наследника
 	{
 		private string Name { get; set; } = "Cat";
 		public string FurColor { get; set; }   // Цвет шерсти
@@ -43,7 +43,7 @@ namespace HomeWork_OOP_1.Animals.MammalsGroup
 			return $"NameType: {NameType}\nName: {Name}\nAge:{Age}\nFurColor: {FurColor}\nIsDomesticated: {IsDomesticated}";
 		}
 
-
 		
+
 	}
 }

@@ -7,16 +7,17 @@ using System.Threading.Tasks;
 
 namespace HomeWork_OOP_1.Animals.MammalsGroup
 {
-	public class Human : Animal
+	public class Human<T> : Animal<string> //типизация производного класса параметром совсем другого типа, отличного от универсального параметра в базовом классе
 	{
+
+		public T Id { get; set; }
 		private string Name { get; set; } = "Human";
 		public string Nationality { get; set; }   // Национальность
-		public string Profession { get; set; }    // Профессия
 
-		public Human(int age, string nationality, string profession, AnimalGroup nameType = AnimalGroup.Mammals) : base(nameType, age)
+		public Human(T id, string age, string nationality, AnimalGroup nameType = AnimalGroup.Mammals) : base(nameType, age)
 		{
 			Nationality = nationality;
-			Profession = profession;
+			Id = id;
 		}
 		public override void Move()
 		{
@@ -24,7 +25,7 @@ namespace HomeWork_OOP_1.Animals.MammalsGroup
 		}
 		public override void Print()
 		{
-			Console.WriteLine($"NameType: {NameType}\nName: {Name}\nAge:{Age}\nNationality: {Nationality}\nProfession: {Profession}");
+			Console.WriteLine($"NameType: {NameType}\nName: {Name}\nAge:{Age}\nNationality: {Nationality}");
 			Move();
 			Console.WriteLine();
 		}
